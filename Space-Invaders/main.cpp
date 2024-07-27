@@ -38,7 +38,7 @@ int main()
         convex.setPoint(1, sf::Vector2f(620, 200));
         convex.setPoint(2, sf::Vector2f(270, 140));
         convex.setPoint(3, sf::Vector2f(287, 140));
-        convex.setFillColor(sf::Color::Yellow);
+        convex.setFillColor(sf::Color::Magenta);
         window.draw(convex);
 
         // Display whatever you draw
