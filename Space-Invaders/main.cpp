@@ -28,10 +28,18 @@ int main()
         rect.setPosition(600, 400);
         window.draw(rect);
 
-        sf::RectangleShape line(sf::Vector2f(100, 200));
+        sf::RectangleShape line(sf::Vector2f(300, 2));
         line.rotate(35);
         line.setPosition(200, 470);
         window.draw(line);
+
+        sf::ConvexShape convex(4);
+        convex.setPoint(0, sf::Vector2f(0, 0));
+        convex.setPoint(1, sf::Vector2f(620, 200));
+        convex.setPoint(2, sf::Vector2f(270, 140));
+        convex.setPoint(3, sf::Vector2f(287, 140));
+        convex.setFillColor(sf::Color::Yellow);
+        window.draw(convex);
 
         // Display whatever you draw
         window.display();
