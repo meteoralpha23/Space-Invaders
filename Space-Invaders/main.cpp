@@ -17,7 +17,7 @@ int main()
 
 
         // Clear the window
-        window.clear(sf::Color::Yellow);
+        window.clear(sf::Color::Cyan);
         //sf::CircleShape circle(50); // Radius 50
         //circle.setFillColor(sf::Color::Red);
         //circle.setPosition(400, 300); // Set position
