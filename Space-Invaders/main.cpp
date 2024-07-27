@@ -10,14 +10,14 @@ int main()
     while (window.isOpen()) {
         sf::Event event;
         while (window.pollEvent(event)) {
-            // Check for window closure
+            
             if (event.type == sf::Event::Closed)
                 window.close();
         }
 
 
         // Clear the window
-        window.clear(sf::Color::Red);
+        window.clear(sf::Color::Cyan);
 
         // Display whatever you draw
         window.display();
