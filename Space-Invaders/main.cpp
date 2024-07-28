@@ -16,6 +16,11 @@ class Player
     sf::Sprite sprite;
     int movementSpeed;
 
+    void takeDamage() {};
+    void move() {};
+    void shootBullets() {};
+
+
 };
 
 int main()
