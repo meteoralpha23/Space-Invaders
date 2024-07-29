@@ -14,11 +14,20 @@ class Player
     public:
     sf::Texture playerTexture;
     sf::Sprite player_sprite;
-    int movementSpeed;
+    int movementSpeed=5;
 
     void takeDamage() {};
-    void move() {};
+    void move(float offsetX) 
+    {
+        position.x += offsetX;
+    
+    
+    };
     void shootBullets() {};
+
+    int GetMoveSpeed() {
+        return movementSpeed;
+    }
     
     sf::Vector2f getPosition() { return position; };
     
@@ -48,20 +57,19 @@ int main()
             }
             if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
             {
-                player.move();
+                player.move(-1.0f*player.GetMoveSpeed());
             }
             if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
             {
-                player.move();
+                player.move(1.0f * player.GetMoveSpeed());
             }
         }
         window.clear(sf::Color::Blue); // this code will set a blue background color (optional)
 
-        player.player_sprite.setPosition(player.getPosition()); // Set the position of the player sprite
+        player.player_sprite.setPosition(player.getPosition()); 
 
-        window.draw(player.player_sprite);    // Draw the player sprite
+        window.draw(player.player_sprite);  
 
-        window.display(); // Display what was drawn
        
         window.display();
     }
