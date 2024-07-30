@@ -16,6 +16,8 @@ GameService::GameService()
 
 GameService::~GameService()
 {
+
+
 }
 
 void GameService::Ignite()
