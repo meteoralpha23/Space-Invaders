@@ -91,29 +91,15 @@ int main()
 int main()
 {
 
-    GameService Game_Service;
+    GameService* game_service = new GameService();
 
-    Game_Service.Ignite();
-    while (Game_Service.isRunning())
+    game_service->ignite();
+
+    while (game_service->isRunning())
     {
-        Game_Service.update();
-        Game_Service.render();
-   }
-    
-
-    return 0;
-
-
-
-
-
-
-
-
-
-
-
-
+        game_service->update();
+        game_service->render();
+    }
 
 
 }
