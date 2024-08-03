@@ -1,6 +1,8 @@
 #include "D:\Outscal\Space-Invaders\Space-Invaders\Header\GameService.h"
 #include "../Header/GraphicService.h"
 
+#include "../Header/GraphicService.h"
+
 
 
 
@@ -52,6 +54,8 @@ void GameService::destroy()
 
 void GameService::update()
 {
+	service_locator->update();
+	service_locator->getEventService()->update();
 	service_locator->update();
 }
 
