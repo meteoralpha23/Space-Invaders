@@ -1,38 +1,29 @@
-
 #pragma once
+#include "D:\Outscal\Space-Invaders\Space-Invaders\Header\GraphicService.h"
+#include "D:\Outscal\Space-Invaders\Space-Invaders\Header\EventService.h"
 
-#include "../Header/GraphicService.h"
-
-#include "../Header/EventService.h"
-
-// ServiceLocator Class Summary: This class manages access to various services in the application.
-// include relevant headers files
 
 class ServiceLocator
 {
 private:
-    // Private Attributes:
-    GraphicService* graphic_service;
-    EventService* event_service;
 
-    // Private Constructor and Destructor:
-    ServiceLocator();
-    // Constructor for initializing the ServiceLocator.
-    ~ServiceLocator(); 	// Destructor for cleaning up resources upon object deletion.
 
-    // Private Methods:
-    void createServices(); 			// Creates instances of all services.
-    void clearAllServices(); 		//	Deletes and deallocates memory for all services.
+	GraphicService *graphicService;
+	EventService* eventService;
+	
+	ServiceLocator();
+	~ServiceLocator();
+
+	void CreateServices();
+	void ClearAllServices();
 
 public:
-    // Public Methods:
-    static ServiceLocator* getInstance(); 			// Provides a method to access the unique ServiceLocator instance (object).
-    void initialize(); 			//	Initializes the ServiceLocator.
-    void update(); 				//	Updates all services.
-    void render(); 				//	Renders using the services.
+	static ServiceLocator* GetInstance();
 
-    // Methods to Get Specific Services: 
-    GraphicService* getGraphicService();
-    EventService* getEventService();
+	void Initialize();
+	void Update();
+	void Render();
 
+	GraphicService* getGraphicService();
+	EventService* getEventService();
 };

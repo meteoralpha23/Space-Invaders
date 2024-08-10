@@ -1,33 +1,30 @@
 #pragma once
-#include <SFML/Graphics.hpp>
-#include "../Header/ServiceLocator.h"
-#include "../Header/GraphicService.h"
 
+#include <SFML/Graphics.hpp>
+#include "D:\Outscal\Space-Invaders\Space-Invaders\Header\ServiceLocator.h"
 class GameService
 {
 private:
-
-	ServiceLocator* service_locator;
-	sf::RenderWindow* game_window;
-
-	void initialize();
-	void initializeVariables();// Handles game initialization.
-	void destroy();			// Handles cleanup tasks.
-
-
-
+	ServiceLocator* serviceLocator;
+	sf::RenderWindow* gameWindow;
 
 	
-	
+
+	void Initialize(); //initialize the game
+	void InitializeVariables();
+	void Destroy();  //cleanup of resources
 
 
 public:
+	GameService(); //construtor for initializing game service object
+	~GameService(); //destrutor for cleaning up the resources
 
-	GameService();			// Constructor for initializing the GameService object.
-	~GameService();	// Destructor for cleaning up resources upon object deletion.
+ 	void Ignite();  //Start the game
+	void Update();   //Updates Game logic and states
+	void Render();  //Render things on Screen
+	bool IsGameRunning(); //checks if game is running
 
-	void ignite();			// Initiates the game.
-	void update();			// Updates the game logic and game state.
-	void render();			// Renders each frame of the game.
-	bool isRunning();		// Checks if the game is currently running.
+
+
+
 };

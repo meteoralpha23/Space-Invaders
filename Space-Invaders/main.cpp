@@ -1,7 +1,9 @@
 #include <SFML/Graphics.hpp>
 #include<iostream>
-
 #include "D:\Outscal\Space-Invaders\Space-Invaders\Header\GameService.h"
+
+
+
 /*
 class Player
 {
@@ -90,16 +92,14 @@ int main()
 
 int main()
 {
+    GameService* gameService = new GameService();
+    gameService->Ignite();
 
-    GameService* game_service = new GameService();
-
-    game_service->ignite();
-
-    while (game_service->isRunning())
+    while (gameService->IsGameRunning())
     {
-        game_service->update();
-        game_service->render();
+        gameService->Update();
+        gameService->Render();
     }
-
-
+    
+    return 0;
 }

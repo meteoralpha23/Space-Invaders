@@ -1,51 +1,65 @@
-#include "../Header/ServiceLocator.h"
+#include "D:\Outscal\Space-Invaders\Space-Invaders\Header\ServiceLocator.h"
 
 ServiceLocator::ServiceLocator()
 {
-	graphic_service = nullptr;
-	event_service = nullptr;
-	createServices();
+	graphicService = nullptr;
+	eventService = nullptr;
+	CreateServices();
 }
+
+
 ServiceLocator::~ServiceLocator()
 {
-	clearAllServices();
+	ClearAllServices();
+	
 }
 
-void ServiceLocator::createServices()
+void ServiceLocator::CreateServices()
 {
-	graphic_service = new GraphicService();
-	event_service = new EventService();
+	graphicService = new GraphicService();
+	eventService = new EventService();
+
 }
 
-void ServiceLocator::clearAllServices()
+void ServiceLocator::ClearAllServices()
 {
-	delete(graphic_service);
-	delete(event_service);
+	delete(graphicService);
+	graphicService = nullptr;
+	delete(eventService);
+	eventService = nullptr;
+
 }
 
-ServiceLocator* ServiceLocator::getInstance()
+ServiceLocator* ServiceLocator::GetInstance()
 {
 	static ServiceLocator instance;
-	return &instance;
+	return &instance;  // Return address of the instance
 }
 
-void ServiceLocator::initialize()
+void ServiceLocator::Initialize()
 {
-	graphic_service->initialize();
-	event_service->initialize();
+	graphicService->Initialize();
+	eventService->Initialize();
+
 }
 
-void ServiceLocator::update()
+void ServiceLocator::Update()
 {
-	graphic_service->update();
-	event_service->update();
+	graphicService->Update();
+	eventService->Update();
 }
 
-void ServiceLocator::render()
+void ServiceLocator::Render()
 {
-	graphic_service->render();
-	//no event service because nothing to render
+	graphicService->Render();
 }
 
-GraphicService* ServiceLocator::getGraphicService() { return graphic_service; }
-EventService* ServiceLocator::getEventService() { return event_service; }
+GraphicService* ServiceLocator::getGraphicService()
+{
+	return graphicService;
+}
+
+EventService* ServiceLocator::getEventService()
+{
+	return eventService;
+}
