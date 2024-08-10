@@ -1,73 +1,81 @@
 #include "D:\Outscal\Space-Invaders\Space-Invaders\Header\GameService.h"
-#include "../Header/GraphicService.h"
-
-#include "../Header/GraphicService.h"
-
-
+#include "D:\Outscal\Space-Invaders\Space-Invaders\Header\GraphicService.h"
+#include "D:\Outscal\Space-Invaders\Space-Invaders\Header\EventService.h"
 
 
 
 
 GameService::GameService()
 {
+	serviceLocator = nullptr;
+	gameWindow = nullptr;
 
-	service_locator = nullptr;
-	game_window = nullptr;
+
 }
+
 GameService::~GameService()
 {
+	Destroy();
 
-	destroy();
+	//destructor
+}
+
+void GameService::Ignite()
+{
+	serviceLocator = ServiceLocator::GetInstance();
+	Initialize();
+
+}
+void GameService::Initialize()
+{
+	serviceLocator->Initialize();
+	InitializeVariables();
+	
+}
+
+void GameService::InitializeVariables()
+{
+	gameWindow =  serviceLocator->getGraphicService()->GetGameWindow();
+
+
+}
+
+void GameService::Destroy()
+{
+
 }
 
 
-void GameService::ignite()
+
+
+
+
+
+
+void GameService::Update()
 {
-	service_locator = ServiceLocator::getInstance();
-	initialize();
 
+	serviceLocator->Update();
 
+	serviceLocator->getEventService()->ProcessEvents();
+
+	serviceLocator->Update();
+
+	//updates the game logic and states
 
 }
-void GameService::initialize()
+
+void GameService::Render()
 {
+	gameWindow->clear(serviceLocator->getGraphicService()->getWindowColor());
+	serviceLocator->Render();
+	gameWindow->display();
 
-	service_locator->initialize();
-
-
+	//Render things on screen
 }
 
-void GameService::initializeVariables()
+bool GameService::IsGameRunning()
 {
 
-	game_window = service_locator->getGraphicService()->getGameWindow();
-}
-
-void GameService::destroy()
-{
-}
-
-
-
-
-
-
-void GameService::update()
-{
-	service_locator->update();
-	service_locator->getEventService()->update();
-	service_locator->update();
-}
-
-void GameService::render()
-{
-
-	game_window->clear(service_locator->getGraphicService()->getWindowColor());
-	service_locator->render();
-	game_window->display();
-}
-
-bool GameService::isRunning()
-{
-	return service_locator->getGraphicService()->isGameWindowOpen();
+	return serviceLocator->getGraphicService()->isGameWindowOpen();
 }

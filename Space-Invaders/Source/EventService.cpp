@@ -2,41 +2,75 @@
 #include "../Header/GameService.h"
 #include "../Header/GraphicService.h"
 
-EventService::EventService() { game_window = nullptr; }
 
-EventService::~EventService() = default; //calls the default destructor
-
-void EventService::initialize()
+EventService::EventService()
 {
-    game_window = ServiceLocator::getInstance()->getGraphicService()->getGameWindow();
+    gameWindow = nullptr;
 }
 
-void EventService::update()
+EventService::~EventService() = default;
+
+void EventService::Initialize()
 {
-    //for later
+    gameWindow = ServiceLocator::GetInstance()->getGraphicService()->GetGameWindow();
+
 }
 
-void EventService::processEvents()
+void EventService::Update()
 {
-    if (isGameWindowOpen()) {
-        while (game_window->pollEvent(game_event)) {
-            // Check for window closure
+
+
+}
+
+void EventService::ProcessEvents()
+{
+    if (isGameWindowOpen())
+    {
+        while (gameWindow->pollEvent(gameEvent))
+        {
             if (gameWindowWasClosed() || hasQuitGame())
             {
-                game_window->close();
+                
+                gameWindow->close();
             }
         }
     }
+
+
 }
 
-bool EventService::hasQuitGame() { return (isKeyboardEvent() && pressedEscapeKey()); } // only true if the ESC key is pressed and a keyboard event has been registered
+bool EventService::hasQuitGame()
+{
+    return (isKeyboardEvent() && PressedEscapeKey());
+}
 
-//checks for if a keyboard key has been pressed
-bool EventService::isKeyboardEvent() { return game_event.type == sf::Event::KeyPressed; }
+bool EventService::isKeyboardEvent()
+{
+    return gameEvent.type ==  sf::Event::KeyPressed;
+}
+bool EventService::PressedEscapeKey()
+{
+    return gameEvent.key.code == sf::Keyboard::Escape;
+}
 
-//control click on the SFML functions to see what they do internally
-bool EventService::pressedEscapeKey() { return game_event.key.code == sf::Keyboard::Escape; }
+bool EventService::isGameWindowOpen()
+{
+    return gameWindow != nullptr;
+}
 
-bool EventService::isGameWindowOpen() { return game_window != nullptr; }
+bool EventService::gameWindowWasClosed()
+{
+    return gameEvent.type == sf::Event::Closed;
+}
 
-bool EventService::gameWindowWasClosed() { return game_event.type == sf::Event::Closed; }
+
+
+
+
+
+
+
+
+
+
+

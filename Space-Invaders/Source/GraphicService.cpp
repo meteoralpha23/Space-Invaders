@@ -1,83 +1,65 @@
-#include "../Header/GraphicService.h"
+#include "D:\Outscal\Space-Invaders\Space-Invaders\Header\GraphicService.h"
 
 
 GraphicService::GraphicService()
 {
-	game_window = nullptr;
-	video_mode = nullptr;
-
+	videoMode = nullptr;
+	gameWindow = nullptr;
 }
 
 GraphicService::~GraphicService()
 {
-
-	OnDestroy();
-
+	onDestroy();
 }
 
-void GraphicService::initialize()
+void GraphicService::Initialize()
 {
-	game_window = createGameWindow();
-	
+	gameWindow = CreateGameWindow();
+
 
 }
 
-sf::RenderWindow* GraphicService::createGameWindow()
+sf::RenderWindow* GraphicService::CreateGameWindow()
 {
 	setVideoMode();
-	return new sf::RenderWindow(*video_mode, game_window_title);
+	return new sf::RenderWindow(*videoMode, gameWindowTitle);
+
 }
 
 void GraphicService::setVideoMode()
 {
-	video_mode = new sf::VideoMode(game_window_width, game_window_height,
-	sf::VideoMode::getDesktopMode().bitsPerPixel);
+	videoMode = new sf::VideoMode(gameWindowWidth, gameWindowHeight, sf::VideoMode::getDesktopMode().bitsPerPixel); // Allocates and sets the video mode
 }
 
-
-
-
-
-
-
-
-
-void GraphicService::OnDestroy()
+void GraphicService::onDestroy()
 {
-
-	delete(video_mode);
-	delete(game_window);
-
-
+	delete(videoMode);
+	delete(gameWindow);
+	
 }
 
 
 
 
-
-
-
-
-
-void GraphicService::update()
+void GraphicService::Update()
 {
 }
 
-void GraphicService::render()
+void GraphicService::Render()
 {
 }
 
 bool GraphicService::isGameWindowOpen()
 {
-	return game_window->isOpen();
+	return gameWindow->isOpen();
 }
 
-sf::RenderWindow* GraphicService::getGameWindow()
+sf::RenderWindow* GraphicService::GetGameWindow()
 {
-	return game_window;
+	return gameWindow;
 }
 
 sf::Color GraphicService::getWindowColor()
 {
-	return window_color;
+	return windowColor;
 }
