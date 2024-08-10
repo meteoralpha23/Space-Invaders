@@ -1,5 +1,8 @@
 #include "D:\Outscal\Space-Invaders\Space-Invaders\Header\ServiceLocator.h"
 
+
+
+
 ServiceLocator::ServiceLocator()
 {
 	graphicService = nullptr;
@@ -18,6 +21,7 @@ void ServiceLocator::CreateServices()
 {
 	graphicService = new GraphicService();
 	eventService = new EventService();
+	playerService = new PlayerService();
 
 }
 
@@ -27,6 +31,7 @@ void ServiceLocator::ClearAllServices()
 	graphicService = nullptr;
 	delete(eventService);
 	eventService = nullptr;
+	delete(playerService);
 
 }
 
@@ -40,6 +45,7 @@ void ServiceLocator::Initialize()
 {
 	graphicService->Initialize();
 	eventService->Initialize();
+	playerService->initialize();
 
 }
 
@@ -47,6 +53,7 @@ void ServiceLocator::Update()
 {
 	graphicService->Update();
 	eventService->Update();
+	playerService->update();
 }
 
 void ServiceLocator::Render()
