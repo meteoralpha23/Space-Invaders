@@ -2,7 +2,7 @@
 #include "D:\Outscal\Space-Invaders\Space-Invaders\Header\GraphicService.h"
 #include "D:\Outscal\Space-Invaders\Space-Invaders\Header\EventService.h"
 #include "D:\Outscal\Space-Invaders\Space-Invaders\Header\PlayerService.h"
-
+#include "D:\Outscal\Space-Invaders\Space-Invaders\Header\TimeService.h"
 
 class ServiceLocator
 {
@@ -12,6 +12,7 @@ private:
 	GraphicService *graphicService;
 	EventService* eventService;
 	PlayerService* playerService;
+	TimeService* timeService;
 	
 	ServiceLocator();
 	~ServiceLocator();
@@ -29,4 +30,7 @@ public:
 	GraphicService* getGraphicService();
 	EventService* getEventService();
 	PlayerService* getPlayerService();
+	TimeService* getTimeService();
+
+
 };
