@@ -12,6 +12,8 @@ private:
 
 	const sf::Color windowColor = sf::Color::Blue;
 
+	const int frameRate=60;
+
 	sf::VideoMode* videoMode;
 	sf::RenderWindow* gameWindow;
 	void setVideoMode(); // Method for setting our video mode
