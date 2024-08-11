@@ -12,7 +12,7 @@ PlayerService::~PlayerService() = default;
 //init
 void PlayerService::initialize()
 {
-	game_window = ServiceLocator::getInstance()->getGraphicService()->getGameWindow();
+	game_window = ServiceLocator::GetInstance()->getGraphicService()->GetGameWindow();
 	initializePlayerSprite();
 }
 
@@ -31,7 +31,7 @@ void PlayerService::render()
 
 void PlayerService::processPlayerInput()
 {
-	EventService* event_service = ServiceLocator::getInstance()->getEventService(); //get the event service object created in service locator
+	EventService* event_service = ServiceLocator::GetInstance()->getEventService(); //get the event service object created in service locator
 
 	if (event_service->isKeyboardEvent()) //check if a key has been pressed
 	{

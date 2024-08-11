@@ -7,6 +7,7 @@ ServiceLocator::ServiceLocator()
 {
 	graphicService = nullptr;
 	eventService = nullptr;
+	playerService = nullptr;
 	CreateServices();
 }
 
@@ -59,6 +60,7 @@ void ServiceLocator::Update()
 void ServiceLocator::Render()
 {
 	graphicService->Render();
+	playerService->render();
 }
 
 GraphicService* ServiceLocator::getGraphicService()
