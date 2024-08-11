@@ -10,7 +10,7 @@ private:
     int movement_speed = 5;
     int player_score = 0;
 
-    const sf::String player_texture_path = "assets / textures / player_ship.png";
+    const sf::String player_texture_path = "assets/textures/player_ship.png";
 
     sf::Texture player_texture;
     sf::Sprite player_sprite;
@@ -32,5 +32,5 @@ public:
     int getMoveSpeed();
     sf::Vector2f getPlayerPosition();
 
-  
+
 };
