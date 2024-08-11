@@ -6,8 +6,8 @@ class PlayerService
 {
 private:
     int health = 3;
-    sf::Vector2f position = sf::Vector2f(200.0f, 100.0f);
-    int movement_speed = 5;
+    sf::Vector2f position = sf::Vector2f(500.0f, 400.0f);
+    float movement_speed = 300.0f;
     int player_score = 0;
 
     const sf::String player_texture_path = "assets/textures/player_ship.png";
@@ -19,6 +19,9 @@ private:
 
     void initializePlayerSprite();
     void processPlayerInput();
+
+    void moveLeft();
+    void moveRight();
 
 public:
     PlayerService();
