@@ -132,6 +132,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Source\PlayerController.cpp" />
+    <ClCompile Include="Source\PlayerView.cpp" />
     <ClCompile Include="Source\EventService.cpp" />
     <ClCompile Include="Source\GraphicService.cpp" />
     <ClCompile Include="Source\GameService.cpp" />
@@ -144,6 +146,7 @@
   <ItemGroup>
     <ClInclude Include="Header\EventService.h" />
     <ClInclude Include="Header\GameService.h" />
+    <ClInclude Include="Header\PlayerController.h" />
     <ClInclude Include="Header\PlayerModel.h" />
     <ClInclude Include="Header\PlayerService.h" />
     <ClInclude Include="Header\PlayerView.h" />
