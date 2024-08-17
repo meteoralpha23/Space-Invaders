@@ -1,7 +1,7 @@
 #pragma once
 
 #include <SFML/Graphics.hpp>
-#include "D:\Outscal\Space-Invaders\Space-Invaders\Header\ServiceLocator.h"
+#include "D:\Outscal\Space-Invaders\Space-Invaders\Header\Global\ServiceLocator.h"
 class GameService
 {
 private:

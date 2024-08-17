@@ -1,8 +1,8 @@
 #pragma once
-#include "D:\Outscal\Space-Invaders\Space-Invaders\Header\GraphicService.h"
-#include "D:\Outscal\Space-Invaders\Space-Invaders\Header\EventService.h"
-#include "D:\Outscal\Space-Invaders\Space-Invaders\Header\PlayerService.h"
-#include "D:\Outscal\Space-Invaders\Space-Invaders\Header\TimeService.h"
+#include "D:\Outscal\Space-Invaders\Space-Invaders\Header\Graphic\GraphicService.h"
+#include "D:\Outscal\Space-Invaders\Space-Invaders\Header\Event\EventService.h"
+#include "D:\Outscal\Space-Invaders\Space-Invaders\Header\Player\PlayerService.h"
+#include "D:\Outscal\Space-Invaders\Space-Invaders\Header\Time\TimeService.h"
 
 class ServiceLocator
 {

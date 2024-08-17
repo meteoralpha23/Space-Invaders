@@ -1,8 +1,11 @@
 #pragma once
 #include<SFML/Graphics.hpp>
-#include "D:\Outscal\Space-Invaders\Space-Invaders\Header\PlayerModel.h"
-#include "D:\Outscal\Space-Invaders\Space-Invaders\Header\PlayerView.h"
+//#include "D:\Outscal\Space-Invaders\Space-Invaders\Header\PlayerModel.h"
+//#include "D:\Outscal\Space-Invaders\Space-Invaders\Header\PlayerView.h"
 
+enum class PlayerState;
+class PlayerView;
+class PlayerModel;
 class PlayerController
 {
 private:

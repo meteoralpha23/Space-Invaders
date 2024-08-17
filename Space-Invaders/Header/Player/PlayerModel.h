@@ -30,7 +30,8 @@ public:
 
 	//getters and setters
 	sf::Vector2f getPlayerPosition();
-	sf::Vector2f setPlayerPosition(sf::Vector2f position);
+	void setPlayerPosition(sf::Vector2f position);
+
 
 	int getPlayerScore();
 	void setPlayerScore(int score);

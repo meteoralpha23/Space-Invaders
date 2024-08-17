@@ -1,7 +1,9 @@
-#include "../../Header/PlayerController.h"
-#include "../../Header/EventService.h"
-#include "../../Header/ServiceLocator.h"
+#include "D:\Outscal\Space-Invaders\Space-Invaders\Header\Player\PlayerController.h"
+#include "D:\Outscal\Space-Invaders\Space-Invaders\Header\Event\EventService.h"
+#include "D:\Outscal\Space-Invaders\Space-Invaders\Header\Global\ServiceLocator.h"
 #include<algorithm>
+#include "D:\Outscal\Space-Invaders\Space-Invaders\Header\Player\PlayerModel.h"
+#include "D:\Outscal\Space-Invaders\Space-Invaders\Header\Player\PlayerView.h"
 PlayerController::PlayerController()
 {
 	playerModel = new PlayerModel();
@@ -35,6 +37,7 @@ sf::Vector2f PlayerController::getPlayerPosition()
 }
 void PlayerController::processPlayerInput()
 {
+	EventService* event_service = ServiceLocator::GetInstance()->getEventService();
 	if ((sf::Keyboard::isKeyPressed(sf::Keyboard::Left)))
 	{
 		moveLeft();
