@@ -1,6 +1,9 @@
 #pragma once
 #include<SFML/Graphics.hpp>
-#include "../../Header/PlayerController.h"
+//#include "../../Header/Player/PlayerController.h"
+
+class PlayerController;
+
 class PlayerView {
 private:
 	const sf::String player_texture_path = "assets/textures/player_ship.png";

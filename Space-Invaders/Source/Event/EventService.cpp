@@ -1,6 +1,6 @@
-#include "../Header/EventService.h"
-#include "../Header/GameService.h"
-#include "../Header/GraphicService.h"
+#include "D:\Outscal\Space-Invaders\Space-Invaders\Header\Event\EventService.h"
+#include "D:\Outscal\Space-Invaders\Space-Invaders\Header\Main\GameService.h"
+#include "D:\Outscal\Space-Invaders\Space-Invaders\Header\Graphic\GraphicService.h"
 
 
 EventService::EventService()

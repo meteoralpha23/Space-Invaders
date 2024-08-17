@@ -1,6 +1,7 @@
-#include "../Header/PlayerService.h"
-#include "../Header/EventService.h"
-#include "../Header/ServiceLocator.h"
+#include "D:\Outscal\Space-Invaders\Space-Invaders\Header\Player\PlayerService.h"
+#include "D:\Outscal\Space-Invaders\Space-Invaders\Header\Event\EventService.h"
+#include "D:\Outscal\Space-Invaders\Space-Invaders\Header\Global\ServiceLocator.h"
+#include "D:\Outscal\Space-Invaders\Space-Invaders\Header\Player\PlayerController.h"
 
 PlayerService::PlayerService()
 {

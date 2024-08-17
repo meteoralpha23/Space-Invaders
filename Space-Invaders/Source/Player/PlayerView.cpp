@@ -1,5 +1,6 @@
-#include "D:\Outscal\Space-Invaders\Space-Invaders\Header\PlayerView.h"
-#include "../Header/ServiceLocator.h"
+#include "D:\Outscal\Space-Invaders\Space-Invaders\Header\Player\PlayerView.h"
+#include "D:\Outscal\Space-Invaders\Space-Invaders\Header\Global\ServiceLocator.h"
+#include "D:\Outscal\Space-Invaders\Space-Invaders\Header\Player\PlayerController.h"
 PlayerView::PlayerView()
 {
 }
@@ -38,6 +39,7 @@ void PlayerView::scaleSprite()
 
 void PlayerView::Update()
 {
+	player_sprite.setPosition(player_controller->getPlayerPosition());
 }
 
 void PlayerView::Render()

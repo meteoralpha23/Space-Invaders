@@ -1,7 +1,8 @@
-#include "D:\Outscal\Space-Invaders\Space-Invaders\Header\PlayerModel.h"
+#include "D:\Outscal\Space-Invaders\Space-Invaders\Header\Player\PlayerModel.h"
 
 PlayerModel::PlayerModel()
 {
+
 
 }
 
@@ -11,6 +12,7 @@ PlayerModel::~PlayerModel()
 
 void PlayerModel::Initialize()
 {
+	Reset();
 }
 
 void PlayerModel::Reset()
@@ -26,7 +28,7 @@ sf::Vector2f PlayerModel::getPlayerPosition()
 	return playerPosition;
 }
 
-sf::Vector2f PlayerModel::setPlayerPosition(sf::Vector2f position)
+void PlayerModel::setPlayerPosition(sf::Vector2f position)
 {
 	playerPosition = position;
 }

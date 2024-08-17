@@ -1,4 +1,4 @@
-#include "D:\Outscal\Space-Invaders\Space-Invaders\Header\ServiceLocator.h"
+#include "D:\Outscal\Space-Invaders\Space-Invaders\Header\Global\ServiceLocator.h"
 
 
 
